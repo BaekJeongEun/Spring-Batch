@@ -1,0 +1,33 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: false
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  batch:
+    jdbc:
+      initialize-schema: always
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Mysql Settings
+    url: jdbc:mysql://localhost:3306/spring_batch?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${LOCAL_MYSQL_NAME}
+    password: ${LOCAL_MYSQL_PASSWORD}
+server:
+  port: 8080
+
