@@ -1,4 +1,4 @@
-package com.fastcampus.hellospringbatch;
+package com.fastcampus.hellospringbatch.config;
 
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.boot.SpringApplication;
