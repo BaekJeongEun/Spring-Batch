@@ -27,7 +27,7 @@ public class JdbcBatchJobConfiguration {
     private final JobCompletionNotificationListener jobCompletionNotificationListener;
     private static final String JOB_NAME = "jdbcJob";
     private static final String STEP_NAME = "jdbcSteo";
-    private static final int CHUNK_SIZE =1;
+    private static final int CHUNK_SIZE = 1;
 
     @Bean
     public Job jdbcJob() {
