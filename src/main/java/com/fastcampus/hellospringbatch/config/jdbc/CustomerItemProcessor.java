@@ -12,9 +12,10 @@ public class CustomerItemProcessor implements ItemProcessor<Customer, Customer> 
     @Override
     public Customer process(Customer customer) throws Exception {
         int newAge = customer.getAge() + ADD_NEW_AGE;
-        final Customer transformedCustomer = new Customer(customer.getId(), customer.getName(), newAge);
+        final Customer transformedCustomer = new Customer(customer.getId(), customer.getName(),
+            newAge);
 
-        log.info("Change customer.age("+customer.getAge()+") to "+newAge);
+        log.info("Change customer.age(" + customer.getAge() + ") to " + newAge);
         return transformedCustomer;
     }
 }
