@@ -18,7 +18,7 @@ public class JobCompletionNotificationListener {
 
     @BeforeJob
     public void beforeJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.STARTED) {
+        if (jobExecution.getStatus() == BatchStatus.STARTED) {
             log.info("=================================");
             log.info("           JOB STARTED           ");
             log.info("=================================");
@@ -28,14 +28,14 @@ public class JobCompletionNotificationListener {
                     rs.getLong(1),
                     rs.getString(2),
                     rs.getInt(3))
-            ).forEach(customer -> log.info(">>> Found "+customer));
+            ).forEach(customer -> log.info(">>> Found " + customer));
             log.info("=================================");
         }
     }
 
     @AfterJob
     public void afterJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("=================================");
             log.info("           JOB FINISHED           ");
             log.info("=================================");
@@ -45,7 +45,7 @@ public class JobCompletionNotificationListener {
                     rs.getLong(1),
                     rs.getString(2),
                     rs.getInt(3))
-                ).forEach(customer -> log.info(">>> Found "+customer));
+            ).forEach(customer -> log.info(">>> Found " + customer));
             log.info("=================================");
         }
     }
