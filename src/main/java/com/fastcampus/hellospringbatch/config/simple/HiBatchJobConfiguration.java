@@ -20,7 +20,7 @@ class HiBatchJobConfiguration {
 
     public static final String JOB_NAME = "helloJob";
     public static final String STEP_1_NAME = "helloStep";
-    public static final String MESSAGE = "Hello, Spring Batch!!";
+    public static final String MESSAGE = "Hello, Spring Batch!";
 
 
     @Bean
