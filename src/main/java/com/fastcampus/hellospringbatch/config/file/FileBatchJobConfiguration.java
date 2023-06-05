@@ -1,7 +1,5 @@
 package com.fastcampus.hellospringbatch.config.file;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
-
 import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -85,7 +83,7 @@ public class FileBatchJobConfiguration {
         flatFileItemWriter.setAppendAllowed(true);
 
         DelimitedLineAggregator<Product> lineAggregator = new DelimitedLineAggregator<>();
-        lineAggregator.setFieldExtractor(new BeanWrapperFieldExtractor(){
+        lineAggregator.setFieldExtractor(new BeanWrapperFieldExtractor() {
             {
                 setNames(new String[]{"id", "name", "price"});
             }
