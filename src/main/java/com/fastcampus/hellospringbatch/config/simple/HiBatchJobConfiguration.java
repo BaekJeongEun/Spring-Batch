@@ -36,5 +36,4 @@ class HiBatchJobConfiguration {
                 return RepeatStatus.FINISHED;
             }).build();
     }
-
 }

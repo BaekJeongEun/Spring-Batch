@@ -36,5 +36,4 @@ class HelloBatchJobConfiguration {
                 return RepeatStatus.FINISHED;
             }).build();
     }
-
 }
