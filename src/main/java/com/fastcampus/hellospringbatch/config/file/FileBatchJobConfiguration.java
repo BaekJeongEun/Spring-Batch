@@ -52,11 +52,9 @@ public class FileBatchJobConfiguration {
 
     @Bean
     public FlatFileItemReader fileItemReader() {
-        // 아이템 리더 생성
         FlatFileItemReader<Product> productItemReader = new FlatFileItemReader<>();
         productItemReader.setResource(this.inputFileResource);
 
-        // 파일의 라인을 어떻게 가져올 것인가? (기본은 콤마)
         DefaultLineMapper<Product> lineMapper = new DefaultLineMapper<>();
         lineMapper.setLineTokenizer(new DelimitedLineTokenizer());
         lineMapper.setFieldSetMapper(new ProductFiledSetMapper());
@@ -67,7 +65,6 @@ public class FileBatchJobConfiguration {
 
     @Bean
     public ItemProcessor<Product, Product> fileItemProcessor() {
-        // In: Product --> Out: Product
         return product -> {
             BigDecimal updatedPrice = product.getPrice().add(new BigDecimal(ADD_PRICE));
             log.info("[ItemProcessor] Updated product price - {}", updatedPrice);
