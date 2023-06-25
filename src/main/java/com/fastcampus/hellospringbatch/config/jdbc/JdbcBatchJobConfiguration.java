@@ -23,7 +23,7 @@ public class JdbcBatchJobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
-    private DataSource dataSource;
+    private final DataSource dataSource;
     private final JobCompletionNotificationListener jobCompletionNotificationListener;
     private static final String JOB_NAME = "jdbcJob";
     private static final String STEP_NAME = "jdbcSteo";
